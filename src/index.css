@@ -24,6 +24,10 @@ body {
   margin: 0 auto;
 }
 
+main {
+  display: flex;
+}
+
 /* HEADER */
 
 #logo {
@@ -51,4 +55,29 @@ nav {
 nav > div:hover {
   cursor: pointer;
   color: #ffcc63;
+}
+
+/* Sidebar */
+
+aside {
+  width: 300px;
+}
+
+#headshot {
+  width: 200px;
+}
+
+/* About */
+#about-text > p {
+  margin: 10px 0;
+}
+
+.post-text {
+  white-space: pre-wrap;
+  margin-bottom: 20px;
+  border-bottom: 1px solid red;
+}
+
+textarea {
+  padding: 10px;
 }
