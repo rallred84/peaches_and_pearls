@@ -81,3 +81,8 @@ aside {
 textarea {
   padding: 10px;
 }
+
+.ql-container {
+  min-height: 300px;
+  width: 1200px;
+}
