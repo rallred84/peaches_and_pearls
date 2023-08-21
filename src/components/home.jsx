@@ -1,58 +1,28 @@
-import { useState } from "react";
-import ReactQuill from "react-quill";
-import "react-quill/dist/quill.snow.css";
+import { existingPosts } from "../existingPosts";
 import parse from "html-react-parser";
-
-const modules = {
-  toolbar: [
-    [{ header: [1, 2, false] }],
-    ["bold", "italic", "underline", "strike"],
-    [{ color: [] }, { background: [] }],
-    ["blockquote"],
-    [{ list: "ordered" }, { list: "bullet" }],
-    [{ indent: "-1" }, { indent: "+1" }, { align: [] }],
-    ["link", "image", "video"],
-    ["clean"],
-  ],
-};
+import "../component-css/posts.css";
 
 const Home = () => {
-  const [posts, setPosts] = useState([`Testing`, "Again"]);
-  const [post, setPost] = useState("");
-
-  const handleAddPost = (e) => {
-    e.preventDefault();
-    console.log(post);
-    setPosts([post, ...posts]);
-    setPost("");
-  };
-
   return (
-    <>
-      <h3>Testing Posts</h3>
-      {posts.map((post) => {
+    <main>
+      {existingPosts.map((post) => {
         return (
-          <div key={Math.random()} className="post-text">
-            {parse(post)}
-          </div>
+          <section key={post.id}>
+            <div className="post-category-label">{post.categories[0]}</div>
+            <h2 className="post-title">{post.title}</h2>
+            <div className="post-details">
+              <span>posted on : {post.publishDate.toLowerCase()}</span>
+              <span>posted by: {post.author}</span>
+              {post.comments.length > 0 &&
+                `${post.comments.length} ${
+                  post.comments.length === 1 ? "comment" : "comments"
+                }`}
+            </div>
+            <div className="post-html">{parse(post.postHTMl)}</div>
+          </section>
         );
       })}
-      <form action="" onSubmit={(e) => handleAddPost(e)}>
-        {/* <textarea
-          value={post}
-          cols="30"
-          rows="10"
-          onChange={(e) => setPost(e.target.value)}
-        ></textarea> */}
-        <ReactQuill
-          theme="snow"
-          modules={modules}
-          placeholder="Content goes here..."
-          onChange={setPost}
-        />
-        <button>Add Post</button>
-      </form>
-    </>
+    </main>
   );
 };
 

@@ -1,0 +1,18 @@
+.post-category-label {
+  color: #e99e03;
+  font-size: 17px;
+  line-height: 26px;
+  font-family: Arapey, serif;
+}
+
+.post-title {
+  font-family: Arapey, serif;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.post-details {
+  font-family: "Niconne", cursive;
+  font-size: 18px;
+  color: #949494;
+}
