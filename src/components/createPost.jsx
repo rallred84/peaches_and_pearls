@@ -1,7 +1,6 @@
-import { useState } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
-import parse from "html-react-parser";
+// import { useOutletContext } from "react-router-dom";
 
 const modules = {
   toolbar: [
@@ -17,38 +16,22 @@ const modules = {
 };
 
 const CreatePost = () => {
-  const [posts, setPosts] = useState([`Testing`, "Again"]);
-  const [post, setPost] = useState("");
+  // const { posts, setPosts } = useOutletContext();
 
   const handleAddPost = (e) => {
     e.preventDefault();
-    console.log(post);
-    setPosts([post, ...posts]);
-    setPost("");
   };
 
   return (
     <>
-      <h3>Testing Posts</h3>
-      {posts.map((post) => {
-        return (
-          <div key={Math.random()} className="post-text">
-            {parse(post)}
-          </div>
-        );
-      })}
+      <h1>Create New Post</h1>
       <form action="" onSubmit={(e) => handleAddPost(e)}>
-        {/* <textarea
-          value={post}
-          cols="30"
-          rows="10"
-          onChange={(e) => setPost(e.target.value)}
-        ></textarea> */}
+        <input type="text" placeholder="Post Title*" required />
         <ReactQuill
           theme="snow"
           modules={modules}
           placeholder="Content goes here..."
-          onChange={setPost}
+          // onChange={setPost}
         />
         <button>Add Post</button>
       </form>

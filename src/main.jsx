@@ -7,6 +7,8 @@ import JesusTalk from "./components/jesusTalk.jsx";
 import ErrorPage from "./components/errorPage.jsx";
 import Home from "./components/home.jsx";
 import About from "./components/about.jsx";
+import Recipes from "./components/recipes.jsx";
+import CreatePost from "./components/createPost.jsx";
 
 const router = createBrowserRouter([
   {
@@ -23,8 +25,16 @@ const router = createBrowserRouter([
         element: <JesusTalk />,
       },
       {
+        path: "/recipes",
+        element: <Recipes />,
+      },
+      {
         path: "/about",
         element: <About />,
+      },
+      {
+        path: "/create",
+        element: <CreatePost />,
       },
     ],
   },

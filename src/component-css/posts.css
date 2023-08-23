@@ -3,6 +3,16 @@
   font-size: 17px;
   line-height: 26px;
   font-family: Arapey, serif;
+  border-bottom: 1px solid #e99e03;
+  line-height: 0.1em;
+  margin: 10px 0 20px;
+  min-width: 30%;
+  text-align: center;
+}
+
+.post-category-label span {
+  background-color: white;
+  padding: 20px;
 }
 
 .post-title {
@@ -15,4 +25,36 @@
   font-family: "Niconne", cursive;
   font-size: 18px;
   color: #949494;
+}
+
+.post {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.post-title {
+  margin: 10px;
+}
+
+.post-details {
+  margin: 15px;
+  display: flex;
+  gap: 40px;
+}
+
+.post > p {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 17px;
+  line-height: 26px;
+  color: #333;
+  margin-bottom: 20px;
+  align-self: flex-start;
+}
+
+.post > img {
+  width: 85%;
+  margin: 40px;
+  box-shadow: 3px 3px 10px black;
 }
